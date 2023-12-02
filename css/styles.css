@@ -213,7 +213,7 @@ img{
     height: 100%;
     background: linear-gradient(180deg, 
                 hsla(0, 0%, 0%, 0) 58%, 
-                hsl(0,0%,0%, 0.2) 78%);
+                hsl(0,0%,0%, 0.3) 78%);
     z-index: 1;
 }
 .card{
@@ -405,3 +405,59 @@ img{
         width: 430px;
     }
 }
+
+/* =============================== POPULAR ====================================== */
+.popular{
+    padding-block: 5rem;
+}
+.popular__title{
+    text-align: center;
+    padding-bottom: 4rem;
+}
+.popular__cards{
+    justify-content: center;
+    row-gap: 5rem;
+}
+.popular__card{
+    width: 250px;
+}
+.popular__name{
+    font-size: 1.7rem;
+    font-family: var(--fontstyle-secondary);
+    font-weight: var(--font-bold);
+    padding-block: 1.3rem 0.5rem;
+}
+.popular__location{
+    font-size: 1.4rem;
+    font-family: var(--fontstyle-secondary);
+    color: var(--color-text);
+}
+.popular__location > i{
+    padding-right: 5px;
+}
+@media screen and (min-width:768px){
+    .popular__cards{
+        grid-template-columns: repeat(2, 300px);
+        justify-content: center;
+    }
+    .popular__card{
+        justify-self: center;
+    }
+}
+@media screen and (min-width:1024px){
+    .popular__cards{
+        padding-top: 5rem;
+        grid-template-columns: repeat(3, 350px);
+    }
+    .popular__card{
+        width: 300px;
+    }
+    .popular__name{
+        font-size: 2rem;
+    }
+    .popular__location{
+        font-size: 1.7rem;
+    }
+}
+
+/* =============================== EXPLORE ====================================== */
