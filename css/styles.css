@@ -22,7 +22,12 @@
     --font-medium: 400;
     --font-semi-bold: 500;
     --font-bold: 600;
+    /* Font Style */
+    --fontstyle-primary: 'Poppins', sans-serif;
+    --fontstyle-secondary: 'Montserrat', sans-serif;
     /* z index　 */
+    --z-tooltip: 10;
+    --z-fixed: 100;
 }
 
 /* ================= FONT SIZE ============================*/
@@ -81,17 +86,19 @@ body{
     color: var(--color-title);
     background: var(--color-body);
     line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--fontstyle-primary);
 }
-h1,h2,h3{
-    color: var(--color-title);
-    font-weight: var(--font-bold);
+h1,h2,h3,h4{
+    font-weight: var(--font-semi-bold);
+    letter-spacing: 1.5px;
+    font-style: var(--fontstyle-primary);
 }
 ul{
     list-style: none;
 }
 a{
     text-decoration: none;
+    cursor: pointer;
 }
 img{
     max-width: 100%;
@@ -109,4 +116,87 @@ img{
 }
 
 
-/* =============================== header & NAV ====================================== */
+/* =============================== Header & NAV ====================================== */
+.header{
+    background: transparent;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: var(--z-fixed);
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    padding-inline: 2rem;
+}
+.nav__logo{
+    color: #fff;
+    font-size: 1.9rem;
+}
+.nav__link{
+    font-size: 1.7rem;
+    letter-spacing: 0.5px;
+    font-style: var(--fontstyle-secondary);
+    color: #fff;
+    column-gap: 2rem;
+}
+.nav__close,
+.nav__toggle{
+    font-size: 2.2rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1023px){
+    .nav__menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        padding-block: 4rem;
+        -webkit-backdrop-filter:blur(24px); /* For Safari*/
+        background: var(--color-body);
+        transition: top 0.5s;
+    }
+}
+
+.nav__list{
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+.nav__close{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+.nav__link::after {
+    display: block;
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    margin-top: 2px;
+    transition: width 0.5s;
+}
+.nav__link:hover::after{
+    width: 50%;
+}
+.show-menu {
+    top: 0;
+}
+@media screen and (min-width: 1023px){
+    .nav__close,
+    .nav__toggle{
+        display: none;
+    }
+    .nav__list{
+        flex-direction: row;
+        column-gap: 6rem;
+    }
+}
