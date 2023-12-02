@@ -107,6 +107,9 @@ img{
     max-width: 100%;
     height: auto;
 }
+input{
+    outline: none;
+}
 
 
 /* ================= REUSABLE CSS CLASSES ============================*/
@@ -218,6 +221,7 @@ img{
 }
 .card{
     overflow: hidden;
+    position: relative;
 }
 .card-img{
     transition: transform .4s;
@@ -238,7 +242,7 @@ img{
     height: 700px;
     object-fit: cover;
     object-position: center;
-    z-index: -1;
+    z-index: -5;
 }
 .home__shadow{
     position: absolute;
@@ -249,15 +253,14 @@ img{
     background: linear-gradient(180deg, 
                             hsla(0, 0%, 0%, 0) 58%, 
                             hsl(0,0%,0%) 78%);
-    z-index: -1;
+    z-index: -5;
 }
 .home__container{
     text-align: center;
 }
 .home__header{
-    margin-block: 12rem 7rem;
-    width: 400px;
-    margin-inline: auto;
+    padding-block: 12rem 7rem;
+    padding-inline: 2rem;
 }
 .home__subtitle{
     font-size: 1.5rem;
@@ -314,8 +317,23 @@ img{
     left: 1rem;
     z-index: 2;
 }
-
+@media screen and (min-width: 400px) {
+    .home__header{
+        width: 380px;
+        margin-inline: auto;
+    }
+    
+}
 @media screen and (min-width:768px) {
+    .home__header{
+        width: 530px;
+    }
+    .home__title{
+        font-size: 5.5rem;
+    }
+    .home__subtitle{
+        font-size: 1.9rem;
+    }
     .home__cards{
         grid-template-columns: repeat(2,260px);
         display: grid;
@@ -325,7 +343,7 @@ img{
         margin-inline: auto;
     }
 }
-@media screen and (min-width:1024px){
+@media screen and (min-width:1200px){
     .home__header{
         margin-inline: 0;
         margin-block: 20rem 7rem;
@@ -340,10 +358,10 @@ img{
         font-size: 2.5rem;
     }
     .home__cards{
-        grid-template-columns: repeat(4,280px);
+        grid-template-columns: repeat(4,290px);
     }
     .home__card{
-        width: 260px;
+        width: 270px;
     }
     .btn__link{
         font-size: 1.8rem;
@@ -352,15 +370,14 @@ img{
 
 /* =============================== ABOUT ====================================== */
 .about{
-    padding-block: 5rem;
+    padding-block: 3rem;
 }
 .about__container{
     row-gap: 5rem;
 }
 .about__header{
-    width: 400px;
     text-align: center;
-    margin-inline: auto;
+    padding-inline: 2rem;
 }
 .about__title{
     font-size: 2.6rem;
@@ -376,7 +393,12 @@ img{
     margin-inline: auto;
     position: relative;
 }
-
+@media screen and (min-width: 400px) {
+    .about__header{
+        width: 380px;
+        margin-inline: auto;
+    }
+}
 @media screen and (min-width:768px){
     .about__container{
         grid-template-columns: repeat(2, 380px);
@@ -390,7 +412,7 @@ img{
         width: 300px;
     }
 }
-@media screen and (min-width:1024px){
+@media screen and (min-width:1200px){
     .about__container{
         grid-template-columns: repeat(2, 600px);
     }
@@ -461,3 +483,86 @@ img{
 }
 
 /* =============================== EXPLORE ====================================== */
+.explore__img{
+    position: absolute;
+    width: 100%;
+    height: 340px;
+}
+.explore__bg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+.explore__shadow{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+                                hsl(0,0%,0%) 5%,
+                                hsla(0,0%,0%,0) 40%,
+                                hsla(0,0%,0%,0) 60%,
+                                hsl(0,0%,0%) 94%);
+}
+.explore__card{
+   margin-inline: auto;
+   position: relative;
+   padding-top: 25rem;
+}
+.explore__data{
+    text-align: center;
+    padding-inline: 2rem;
+}
+.explore__profil{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    padding-block: 4rem;
+}
+.explore__profil-img{
+    width: 35px;
+    border-radius: 100%;
+}
+.explore__profil-name{
+    font-family: var(--fontstyle-primary);
+    font-weight: var(--font-medium);
+    font-size: 1.4rem;
+    padding-left: 1.3rem;
+}
+@media screen and (min-width: 400px) {
+    .explore__card{
+        width: 500px;
+        margin-inline: auto;
+    }
+}
+/* =============================== JOIN ====================================== */
+.join__container{
+    padding-block: 6rem;
+    row-gap: 3rem;
+}
+.join__form{
+    row-gap: 1rem;
+    padding-block: 5rem;
+}
+.join__input{
+    font-size: 1.5rem;
+    padding-block: 1.7rem;
+    padding-inline: 1.3rem 1rem;
+    border: 0;
+    background:hsla(0, 0%, 21%, 0.5);
+    color: var(--color-text);
+}
+.join__input::placeholder{
+    color: var(--color-text);
+}
+.join__btn{
+    text-align: left;
+    margin: 0;
+}
+.join__header{
+    order: 1;
+}
+/* =============================== BREAKPOINT ====================================== */
