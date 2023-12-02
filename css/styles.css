@@ -85,13 +85,16 @@ html{
 body{
     color: var(--color-title);
     background: var(--color-body);
-    line-height: 1.5;
     font-family: var(--fontstyle-primary);
 }
 h1,h2,h3,h4{
     font-weight: var(--font-semi-bold);
-    letter-spacing: 1.5px;
     font-style: var(--fontstyle-primary);
+    margin: 0;
+}
+p{
+    margin: 0;
+    line-height: 1.5;
 }
 ul{
     list-style: none;
@@ -105,10 +108,11 @@ img{
     height: auto;
 }
 
+
 /* ================= REUSABLE CSS CLASSES ============================*/
 .container{
-    max-width: 1120px;
-    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
     overflow: hidden;
 }
 .grid{
@@ -200,3 +204,147 @@ img{
         column-gap: 6rem;
     }
 }
+
+/* =============================== HOME ====================================== */
+.home{
+    position: relative;
+    padding-bottom: 5rem;
+}
+.home__bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+.home__shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 800px;
+    background: linear-gradient(180deg, 
+                            hsla(0, 0%, 0%, 0) 58%, 
+                            hsl(0,0%,0%) 78%);
+    z-index: -1;
+}
+.home__container{
+    text-align: center;
+}
+.home__header{
+    margin-block: 12rem 7rem;
+    width: 400px;
+    margin-inline: auto;
+}
+.home__subtitle{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+.home__title{
+    font-family: var(--fontstyle-secondary);
+    font-weight: var(--font-bold);
+    padding-bottom: 2rem;
+}
+.btn{
+    display: inline-block;
+    background:  hsla(0, 0%, 46%, 0.6);
+    border: 0;
+    padding: 1.8rem 3rem;
+    padding-right: 5rem;
+    margin-top: 4rem;
+}
+.btn__link{
+    color: #fff;
+    font-size: 1.6rem;
+    font-family: var(--fontstyle-primary);
+    font-weight: bold;
+    position: relative;
+}
+.btn__link > i{
+    font-size: 2.2rem;
+    font-weight: var(--font-semi-bold);
+    align-self: center;
+    padding-left: 1rem;
+    position: absolute;
+    bottom: -3px;
+    transition: padding 0.4s;
+}
+.btn:hover .btn__link > i{
+    padding-left: 1.5rem;
+}
+.home__cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3rem;
+}
+.home__card{
+    width: 230px;
+    position: relative;
+    overflow: hidden;
+}
+.card__title{
+    position: absolute;
+    z-index: 1;
+    font-size: 1.7rem;
+    color: #fff;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 2;
+}
+.card__shadow{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(180deg, 
+                hsla(0, 0%, 0%, 0) 58%, 
+                hsl(0,0%,0%, 0.2) 78%);
+    z-index: 1;
+}
+.home__card-img{
+    transition: transform 0.4s;
+}
+.home__card:hover .home__card-img{
+    transform: scale(1.15);
+}
+
+@media screen and (min-width:768px) {
+    .home__cards{
+        grid-template-columns: repeat(2,260px);
+        display: grid;
+        justify-content: center;
+    }
+    .home__card{
+        margin-inline: auto;
+    }
+}
+@media screen and (min-width:1024px){
+    .home__header{
+        margin-inline: 0;
+        margin-block: 20rem 7rem;
+        text-align: left;
+        padding-left: 3rem;
+        width: 50%;
+    }
+    .home__title{
+        font-size: 9rem;
+    }
+    .home__subtitle{
+        font-size: 2.5rem;
+    }
+    .home__cards{
+        grid-template-columns: repeat(4,1fr);
+    }
+    .home__card{
+        width: 260px;
+    }
+    .btn__link{
+        font-size: 1.8rem;
+    }
+}
+

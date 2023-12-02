@@ -13,12 +13,71 @@
     <title>Travel website</title>
 </head>
 <body>
+    <header class="header" id="header">
+        <div class="nav container">
+            <a href="#" class="nav__logo"> Travel</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#popular" class="nav__link">Popular</a></li>
+                    <li class="nav__item"><a href="#explore" class="nav__link">Explor</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class="ri-close-fill"></i></div>
+            </div>
+    
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-fill"></i>
+            </div>
+    
+        </div>
+    </header>
+
+
     <section class="home" id="home">
+        <img class="home__bg" src="images/home-bg.jpg" alt="home background">
+        <div class="home__shadow"></div>
+
         <div class="home__container container">
-            <h4>Welcome To Travel</h4>
-            <h1>Explore<br>The World</h1>
+
+            <div class="home__header">
+                <h3 class="home__subtitle">Welcome To Travel</h3>
+                <h1 class="home__title">Explore<br>The World</h1>
+                <p class="home__discription">Live the trips exploring the world, discover paradises, islands, mountains and much more, get your trip now.</p>
+                <button class="btn"><a href="#" class="btn__link">Start Your Journey
+                    <i class="ri-arrow-right-line"></i>
+                </a></button>
+            </div>
+
+            <div class="home__cards grid">
+                <div class="home__card">
+                    <img class="home__card-img" src="images/home-trees.jpg" alt="trees">
+                    <h3 class="card__title">Croatia</h3>
+                    <div class="card__shadow"></div>
+                </div>
+
+                <div class="home__card">
+                    <img class="home__card-img" src="images/home-lake.jpg" alt="lake">
+                    <h3 class="card__title">Iceland</h3>
+                    <div class="card__shadow"></div>
+                </div>
+
+                <div class="home__card">
+                    <img class="home__card-img" src="images/home-mountain.jpg" alt="mountain">
+                    <h3 class="card__title">Italy</h3>
+                    <div class="card__shadow"></div>
+                </div>
+
+                <div class="home__card">
+                    <img class="home__card-img" src="images/home-beach.jpg" alt="beach">
+                    <h3 class="card__title">Spain</h3>
+                    <div class="card__shadow"></div>
+                </div>
+            </div>
         </div>
     </section>
+
+    section
 
     <!-- =====================RELAX JS====================== -->
    
