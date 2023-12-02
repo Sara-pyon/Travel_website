@@ -204,7 +204,27 @@ img{
         column-gap: 6rem;
     }
 }
-
+/* =============================== IMAGE ZOOMUP ====================================== */
+.card__shadow{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, 
+                hsla(0, 0%, 0%, 0) 58%, 
+                hsl(0,0%,0%, 0.2) 78%);
+    z-index: 1;
+}
+.card{
+    overflow: hidden;
+}
+.card-img{
+    transition: transform .4s;
+}
+.card:hover .card-img{
+    transform: scale(1.15);
+}
 /* =============================== HOME ====================================== */
 .home{
     position: relative;
@@ -284,7 +304,6 @@ img{
 .home__card{
     width: 230px;
     position: relative;
-    overflow: hidden;
 }
 .card__title{
     position: absolute;
@@ -294,23 +313,6 @@ img{
     bottom: 1rem;
     left: 1rem;
     z-index: 2;
-}
-.card__shadow{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 200px;
-    background: linear-gradient(180deg, 
-                hsla(0, 0%, 0%, 0) 58%, 
-                hsl(0,0%,0%, 0.2) 78%);
-    z-index: 1;
-}
-.home__card-img{
-    transition: transform 0.4s;
-}
-.home__card:hover .home__card-img{
-    transform: scale(1.15);
 }
 
 @media screen and (min-width:768px) {
@@ -338,7 +340,7 @@ img{
         font-size: 2.5rem;
     }
     .home__cards{
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(4,280px);
     }
     .home__card{
         width: 260px;
@@ -348,3 +350,58 @@ img{
     }
 }
 
+/* =============================== ABOUT ====================================== */
+.about{
+    padding-block: 5rem;
+}
+.about__container{
+    row-gap: 5rem;
+}
+.about__header{
+    width: 400px;
+    text-align: center;
+    margin-inline: auto;
+}
+.about__title{
+    font-size: 2.6rem;
+    font-family: var(--fontstyle-secondary);
+    font-weight: var(--font-bold);
+    padding-bottom: 3rem;
+}
+.about__discription{
+    color: var(--color-text);
+}
+.about__card{
+    width: 300px;
+    margin-inline: auto;
+    position: relative;
+}
+
+@media screen and (min-width:768px){
+    .about__container{
+        grid-template-columns: repeat(2, 380px);
+        justify-content: center;
+    }
+    .about__header{
+        text-align: left;
+        width: 330px;
+    }
+    .about__card{
+        width: 300px;
+    }
+}
+@media screen and (min-width:1024px){
+    .about__container{
+        grid-template-columns: repeat(2, 600px);
+    }
+    .about__header{
+        width: 500px;
+        align-self: center;
+    }
+    .about__title{
+        font-size: 4.4rem;
+    }
+    .about__card{
+        width: 430px;
+    }
+}
