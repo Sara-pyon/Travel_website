@@ -107,7 +107,8 @@ img{
     max-width: 100%;
     height: auto;
 }
-input{
+input,
+a{
     outline: none;
 }
 ul{
@@ -133,6 +134,7 @@ ul{
     top: 0;
     width: 100%;
     z-index: var(--z-fixed);
+    height: var(--header-height);
 }
 .nav{
     display: flex;
@@ -167,7 +169,9 @@ ul{
         display: flex;
         padding-block: 4rem;
         -webkit-backdrop-filter:blur(24px); /* For Safari*/
-        background: var(--color-body);
+        background: hsla(0, 0%, 100%, 0.1);
+        backdrop-filter: blur(24px);
+        -webkit-line-break: blur(24px);
         transition: top 0.5s;
     }
 }
@@ -199,6 +203,7 @@ ul{
 .show-menu {
     top: 0;
 }
+
 @media screen and (min-width: 1023px){
     .nav__close,
     .nav__toggle{
@@ -667,11 +672,40 @@ ul{
 .scrollUp{
     position: fixed;
     right: 1rem;
-    bottom: 4rem;
+    bottom: -100%;
     background: hsla(0, 0%, 100%, 0.1);
     font-size: 2.3rem;
     z-index: 10;
     color: #fff;
     padding: 0.4rem 0.6rem;
     cursor: pointer;
+    transition: bottom .4s;
+    backdrop-filter: blur(24px);
+    -webkit-line-break: blur(24px); /* For safari */
+}
+.show-scrollUp{
+    bottom: 4rem;
+    transition: transform .4s;
+}
+.show-scrollUp:hover{
+    transform: translateY(-.75rem);
+}
+
+/* =============================== CHANGE HEADER BACKGROUND ====================================== */
+.scroll-menu::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: hsla(0, 0%, 100%, 0.1);
+    backdrop-filter: blur(24px);
+    -webkit-line-break: blur(24px);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* =============================== SCROLL SECTIONS ACTIVE LINK  ====================================== */
+.active-link::after{
+    width: 50%;
 }
