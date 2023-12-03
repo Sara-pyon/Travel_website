@@ -1,3 +1,5 @@
+// import ScrollReveal from './scroll.reveral.min.js'
+
 // ======================== SHOW MENU =====================
 const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
@@ -55,3 +57,21 @@ const scrollActive = () => {
 }
 
 window.addEventListener('scroll',scrollActive);
+
+// ====================== SCROLL REVERAL ANIMATION ============================
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 3000,
+    delay: 400,
+    // reset: true Animation repeat
+})
+
+sr.reveal(`.home__header`);
+sr.reveal(`.home__card`,{delay: 600, distance: '100px', interval: 100});
+sr.reveal(`.about__header`,{origin: "right"});
+sr.reveal(`.about__card`,{origin: "left"});
+sr.reveal(`.popular__card`,{delay: 600, distance: '100px', interval: 100});
+sr.reveal(`.explore__discription`);
+sr.reveal(`.explore__profil`,{delay: 500});
+sr.reveal(`.footer`);
