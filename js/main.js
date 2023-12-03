@@ -1,4 +1,4 @@
-// import ScrollReveal from './scroll.reveral.min.js'
+import ScrollReveal from './scroll.reveral.min.js'
 
 // ======================== SHOW MENU =====================
 const navMenu = document.getElementById('nav-menu');

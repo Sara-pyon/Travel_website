@@ -1,4 +1,4 @@
-@import'./normalize.css';
+@import './normalize.css';
 
 /* ================= GOOGLE FONTS============================*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap');
@@ -240,6 +240,7 @@ ul{
 .home{
     position: relative;
     padding-bottom: 5rem;
+    padding-top: 2rem;
 }
 .home__bg{
     position: absolute;
