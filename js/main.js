@@ -16,3 +16,5 @@ if(navClose){
         navMenu.classList.remove('show-menu');
     })
 }
+
+// ======================== SCROLLUP SHOW =====================

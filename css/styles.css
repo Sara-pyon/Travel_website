@@ -110,7 +110,9 @@ img{
 input{
     outline: none;
 }
-
+ul{
+    padding: 0;
+}
 
 /* ================= REUSABLE CSS CLASSES ============================*/
 .container{
@@ -540,7 +542,7 @@ input{
 }
 /* =============================== JOIN ====================================== */
 .join__container{
-    padding-block: 6rem;
+    padding-block: 6rem 2rem;
     row-gap: 3rem;
 }
 .join__form{
@@ -565,4 +567,111 @@ input{
 .join__header{
     order: 1;
 }
-/* =============================== BREAKPOINT ====================================== */
+/* =============================== FOOTER ====================================== */
+.footer{
+    background: var(--color-component);
+    padding-block: 4rem 0rem;
+}
+.footer__container{
+    padding-inline: 2rem;
+}
+.footer__title{
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+.footer__discription{
+    font-size: 1.5rem;
+    color: var(--color-text);
+}
+.footer__content{
+    row-gap: 4rem;
+}
+.footer__cards{
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 2rem;
+}
+.footer__card{
+    row-gap: 1rem;
+}
+.footer__card-title{
+    font-size: 1.6rem;
+    padding-bottom: 0.8rem;
+}
+.footer__card-item{
+    font-size: 1.5rem;
+    color: var(--color-text);
+    padding-bottom: 2rem;
+    transition: color .4s;
+    cursor: pointer;
+}
+.footer__card-item:hover{
+    color: #fff;
+}
+.footer__group{
+   text-align: center;
+   padding-block: 8rem 4rem;
+}
+.footer__item{
+    font-size: 2.4rem;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: color .4s, transform .4s;
+}
+
+.footer__item:hover{
+    color: #fff;
+    transform: translateY(-.75rem);
+}
+.footer__social{
+    grid-template-columns: repeat(4,20px);
+    column-gap: 4rem;
+    justify-content: center;
+}
+.footer__copy{
+    font-size: 1.4rem;
+    color: var(--color-text);
+    padding-top: 2rem;
+}
+
+@media screen and (min-width:400px){
+    .footer__cards{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media screen and (min-width:768px){
+    .footer__content{
+        grid-template-columns: 2fr 3fr;
+    }
+}
+@media screen and (min-width:1024px){
+    .footer__cards{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+/* =============================== SCROLL BAR ====================================== */
+::-webkit-scrollbar{
+    width: .6rem;
+    background: hsl(0, 0%, 10%);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: hsl(0, 0%, 20%);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: hsl(0, 0%, 30%);
+}
+
+/* =============================== SCROLL UP ====================================== */
+.scrollUp{
+    position: fixed;
+    right: 1rem;
+    bottom: 4rem;
+    background: hsla(0, 0%, 100%, 0.1);
+    font-size: 2.3rem;
+    z-index: 10;
+    color: #fff;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+}
